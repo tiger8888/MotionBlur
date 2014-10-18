@@ -13,6 +13,8 @@
 		1F2F0D3819F2188E008939EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F0D3719F2188E008939EA /* Images.xcassets */; };
 		1F2F0D3B19F2188E008939EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F0D3919F2188E008939EA /* LaunchScreen.xib */; };
 		1F2F0D4719F2188E008939EA /* MotionBlurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D4619F2188E008939EA /* MotionBlurTests.swift */; };
+		1F2F0D5119F2190A008939EA /* MotionBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */; };
+		1F2F0D5619F22C0F008939EA /* CIFilterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		1F2F0D4019F2188E008939EA /* MotionBlurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionBlurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F0D4519F2188E008939EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F2F0D4619F2188E008939EA /* MotionBlurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionBlurTests.swift; sourceTree = "<group>"; };
+		1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionBlurFilter.swift; sourceTree = "<group>"; };
+		1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIFilterExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		1F2F0D2D19F2188E008939EA /* MotionBlur */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F0D5219F21916008939EA /* Motion Blur */,
 				1F2F0D3019F2188E008939EA /* AppDelegate.swift */,
 				1F2F0D3219F2188E008939EA /* ViewController.swift */,
 				1F2F0D3419F2188E008939EA /* Main.storyboard */,
@@ -110,6 +115,15 @@
 				1F2F0D4519F2188E008939EA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F2F0D5219F21916008939EA /* Motion Blur */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */,
+				1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */,
+			);
+			name = "Motion Blur";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,8 @@
 			files = (
 				1F2F0D3319F2188E008939EA /* ViewController.swift in Sources */,
 				1F2F0D3119F2188E008939EA /* AppDelegate.swift in Sources */,
+				1F2F0D5119F2190A008939EA /* MotionBlurFilter.swift in Sources */,
+				1F2F0D5619F22C0F008939EA /* CIFilterExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
