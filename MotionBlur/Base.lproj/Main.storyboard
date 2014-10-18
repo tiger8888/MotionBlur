@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MotionBlur" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopMenu" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-Lj-guS">
+                                <rect key="frame" x="141" y="0.0" width="319" height="301"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="32u-t2-hyl"/>
+                                    <constraint firstAttribute="height" constant="301" id="fKd-qN-bei"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKY-hV-iqC">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="Toggle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="move:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fXX-nT-1sS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fUE-Lj-guS" secondAttribute="centerX" id="DSA-2D-PUW"/>
+                            <constraint firstItem="iKY-hV-iqC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FjY-o7-yXD"/>
+                            <constraint firstItem="iKY-hV-iqC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SL9-ic-dpI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iKY-hV-iqC" secondAttribute="bottom" constant="20" id="bEo-KD-ETL"/>
+                            <constraint firstItem="fUE-Lj-guS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hNl-D5-Sq0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toggleButton" destination="iKY-hV-iqC" id="wiD-I0-4C7"/>
+                        <outlet property="topMenu" destination="fUE-Lj-guS" id="MKI-Oy-Onj"/>
+                        <outlet property="topMenuHiddenConstraint" destination="hNl-D5-Sq0" id="9HV-rD-ZVM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="TopMenu" width="319" height="301"/>
+    </resources>
 </document>
