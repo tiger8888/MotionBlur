@@ -67,3 +67,18 @@ class MotionBlurFilter: CIFilter {
     }
 
 }
+
+func motionBlur(angle: Float) -> Filter {
+    return { image in
+        let parameters: Parameters = [
+            kCIInputAngleKey: angle,
+            kCIInputImageKey: image
+        ]
+        let filter = MotionBlurFilter()
+        filter.setDefaults()
+        for (key, value) in parameters {
+            filter.setValue(value, forKey: key)
+        }
+        return filter.outputImage
+    }
+}

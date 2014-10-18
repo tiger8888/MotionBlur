@@ -15,6 +15,7 @@
 		1F2F0D4719F2188E008939EA /* MotionBlurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D4619F2188E008939EA /* MotionBlurTests.swift */; };
 		1F2F0D5119F2190A008939EA /* MotionBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */; };
 		1F2F0D5619F22C0F008939EA /* CIFilterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */; };
+		1F2F0D5819F235A2008939EA /* UIViewMotionBlurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F0D5719F235A2008939EA /* UIViewMotionBlurExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1F2F0D4619F2188E008939EA /* MotionBlurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionBlurTests.swift; sourceTree = "<group>"; };
 		1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionBlurFilter.swift; sourceTree = "<group>"; };
 		1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIFilterExtensions.swift; sourceTree = "<group>"; };
+		1F2F0D5719F235A2008939EA /* UIViewMotionBlurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewMotionBlurExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				1F2F0D5519F22C0F008939EA /* CIFilterExtensions.swift */,
 				1F2F0D5019F2190A008939EA /* MotionBlurFilter.swift */,
+				1F2F0D5719F235A2008939EA /* UIViewMotionBlurExtension.swift */,
 			);
 			name = "Motion Blur";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				1F2F0D3319F2188E008939EA /* ViewController.swift in Sources */,
 				1F2F0D3119F2188E008939EA /* AppDelegate.swift in Sources */,
 				1F2F0D5119F2190A008939EA /* MotionBlurFilter.swift in Sources */,
+				1F2F0D5819F235A2008939EA /* UIViewMotionBlurExtension.swift in Sources */,
 				1F2F0D5619F22C0F008939EA /* CIFilterExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
