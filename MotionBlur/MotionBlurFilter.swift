@@ -14,8 +14,8 @@ let kernelSource =  "kernel vec4 motionBlur(sampler image, vec2 velocity, float 
                         "vec4 sum = vec4(0.0), avg = vec4(0.0); "                                       +
                         "vec2 dc = destCoord(), offset = -velocity; "                                   +
                         "for (int i=0; i < (numSamples * 2 + 1); i++) { "                               +
-                        "sum += sample (image, samplerTransform (image, dc + offset)); "            +
-                        "offset += velocity / float(numSamples); "                                  +
+                            "sum += sample (image, samplerTransform (image, dc + offset)); "            +
+                            "offset += velocity / float(numSamples); "                                  +
                         "} "                                                                            +
                         "avg = sum / float((numSamples * 2 + 1)); "                                     +
                         "return avg; "                                                                  +
