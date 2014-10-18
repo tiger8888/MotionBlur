@@ -14,10 +14,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var topMenuHiddenConstraint: NSLayoutConstraint!
     @IBOutlet weak var toggleButton: UIButton!
 
+    var strongTopMenuHiddenConstraint: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        topMenuHiddenConstraint.priority = 1000
+        strongTopMenuHiddenConstraint = topMenuHiddenConstraint
+        strongTopMenuHiddenConstraint.priority = 1000
 
         toggleButton.setTitle("Creating...", forState: .Normal)
         toggleButton.enabled = false
@@ -46,9 +49,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func move(sender: AnyObject) {
-        topMenuHiddenConstraint.active = !topMenuHiddenConstraint.active
+        strongTopMenuHiddenConstraint.active = !strongTopMenuHiddenConstraint.active
 
-        let hiding = topMenuHiddenConstraint.active
+        let hiding = strongTopMenuHiddenConstraint.active
 
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: hiding ? 0 : 0.6, options: .AllowUserInteraction | .BeginFromCurrentState, animations: { () -> Void in
             self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)

@@ -28,10 +28,26 @@ class MotionBlurFilter: CIFilter {
     let kMotionBlurSampleCountKey = "kMotionBlurSampleCountKey"
     var numberOfSample: Int = 5
 
+    var radius: Float = 40
+    var angle: Float = Float(M_PI_2)
+    var inputImage: CIImage?
+
     override func setValue(value: AnyObject?, forKey key: String) {
         if key == kMotionBlurSampleCountKey {
             if let number = value as? NSNumber {
                 numberOfSample = number.integerValue
+            }
+        } else if key == kCIInputRadiusKey {
+            if let number = value as? NSNumber {
+                radius = number.floatValue
+            }
+        } else if key == kCIInputAngleKey {
+            if let number = value as? NSNumber {
+                angle == number.floatValue
+            }
+        } else if key == kCIInputImageKey {
+            if let image = value as? CIImage {
+                inputImage = image
             }
         } else {
             super.setValue(value, forKey: key)
@@ -41,29 +57,25 @@ class MotionBlurFilter: CIFilter {
     override func valueForKey(key: String) -> AnyObject? {
         if key == kMotionBlurSampleCountKey {
             return NSNumber(integer: numberOfSample)
+        } else if key == kCIInputRadiusKey {
+            return NSNumber(float: radius)
+        } else if key == kCIInputAngleKey {
+            return NSNumber(float: angle)
+        } else if key == kCIInputImageKey {
+            return inputImage
         } else {
             return super.valueForKey(key)
         }
     }
 
-    override func setDefaults() {
-        super.setDefaults()
-        setValue(NSNumber(float: 40), forKey: kCIInputRadiusKey)
-        setValue(NSNumber(double: M_PI_2), forKey: kCIInputAngleKey)
-    }
-
     override var outputImage: CIImage {
-        let radius = self.valueForKey(kCIInputRadiusKey)!.floatValue
-        let angle = self.valueForKey(kCIInputAngleKey)!.floatValue
-        let inputImage = self.valueForKey(kCIInputImageKey) as CIImage
-
         let x = CGFloat(radius * cosf(angle))
         let y = CGFloat(radius * sin(angle))
-        let dod = CGRectInset(inputImage.extent(), -abs(x), -abs(y))
+        let dod = CGRectInset(inputImage!.extent(), -abs(x), -abs(y))
 
         return kernel.applyWithExtent(dod, roiCallback: { (index, rect) -> CGRect in
                 CGRectInset(rect, -abs(x), -abs(y))
-            }, arguments: [inputImage, CIVector(x: x, y: y), numberOfSample])
+            }, arguments: [inputImage!, CIVector(x: x, y: y), numberOfSample])
     }
 
 }
@@ -75,7 +87,6 @@ func motionBlur(angle: Float) -> Filter {
             kCIInputImageKey: image
         ]
         let filter = MotionBlurFilter()
-        filter.setDefaults()
         for (key, value) in parameters {
             filter.setValue(value, forKey: key)
         }
